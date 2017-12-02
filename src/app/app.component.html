@@ -1,0 +1,29 @@
+<div class="container">
+  <!-- property biding -->
+  <!-- <app-card [task]="task1"></app-card> -->
+
+  <!-- iteration -->
+  <div class="row">
+    <div class="col-6">
+      <!-- event binding -->
+      <form action="form-inline" (ngSubmit)="addTask()" #taskForm="ngForm">
+        <div class="form-group">
+          <label for="cotent-field" class="sr-only"></label>
+          <!-- 2 ways data binding -->
+          <input type="text" class="form-control" required placeholder="Enter a task..." [(ngModel)]="currentTask.content" name="content">
+        </div>
+        <button type="submit" class="btn" [disabled]="taskForm.form.invalid" >Add Task</button>
+        <!-- Content: {{ currentTask.content }} -->
+      </form>
+    </div>
+  </div>
+  <app-card *ngFor="let task of tasks" [task]="task"></app-card>
+  <h5 *ngIf="tasks.length == 0">
+    <p>The task list is empty</p>
+  </h5>
+  <h5 *ngIf="tasks.length != 0">
+      <p>{{ tasks.length }}</p>
+    </h5>
+
+</div>
+

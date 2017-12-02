@@ -1,0 +1,12 @@
+<!-- class binding -->
+<div class="col-sm-3" (click)="statusToggle()" [class.completed]="task.completed">
+    <div class="card">
+        <!-- interpolation -->
+        <p>{{ task.content }}</p>
+    </div>
+    <div class=card-footer>
+        <!-- <i class="fa fa-times" aria-hidden="true"></i>  -->
+        <span *ngIf="!task.completed"><p>Not Completed</p></span>
+        <span *ngIf="task.completed"><p>Completed</p></span>
+    </div>
+</div>

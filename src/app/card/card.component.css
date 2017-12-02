@@ -1,0 +1,15 @@
+.col-sm-3 {
+    max-width: 30%;
+    background-color: #ffff74;
+    cursor: pointer;
+}
+.card, .card-footer { 
+    border: none;
+}
+.card-footer{
+    text-align: right;
+}
+
+.col-sm-3.completed {
+    background-color: #968c8c;
+}
